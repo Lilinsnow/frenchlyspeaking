@@ -65,7 +65,10 @@ To rename a file or move the images folder, change a path in `IMAGES` — markup
 
 ## Hosting
 
-Site is hosted on **IONOS** at the domain **frenchlyspeaking.com** (with **frenchlyspeaking.fr** redirecting to it).
+Site is hosted on **GitHub Pages** (free static hosting by GitHub, Inc.).
+
+- Default URL: `https://<username>.github.io/<repo>/`
+- Optional custom domain (e.g. `frenchlyspeaking.com`): add a `CNAME` file at the repo root containing the domain, then point a DNS A record (or `ALIAS`/`ANAME`) at GitHub Pages' IPs as documented at <https://docs.github.com/pages>.
 
 ## Deployment
 

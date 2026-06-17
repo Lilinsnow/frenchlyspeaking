@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frenchly Speaking — Teaching French Since 2002</title>
+    <title>Frenchly Speaking — Karina Vitiello, native French teacher</title>
     <meta name="description" content="Learn French with a passionate native teacher. Private lessons, group classes, and conversation practice. Teaching French since 2002.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -833,6 +833,7 @@
             color: var(--warm-gray);
             margin-bottom: 1.5rem;
             line-height: 1.7;
+            flex: 1;
         }
 
         .service-price {
@@ -936,6 +937,92 @@
         }
         .testimonials .deco-line {
             background: linear-gradient(to right, var(--white), rgba(255,255,255,0.25));
+        }
+
+        /* ===================== LESSONS — 2-column layout ===================== */
+        .lessons-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3.5rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .lessons-text {
+            text-align: left;
+        }
+
+        .lessons-text .deco-line {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .lessons-text .section-title {
+            text-align: left;
+            margin-bottom: 1.2rem;
+        }
+
+        .lessons-paragraph {
+            color: var(--warm-gray);
+            font-size: 1rem;
+            line-height: 1.85;
+        }
+
+        .lessons-paragraph strong {
+            color: var(--violet);
+            font-weight: 700;
+        }
+
+        .lessons-image {
+            max-width: 500px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .lessons-collage {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-strong);
+            border: 4px solid var(--white);
+        }
+
+        @media (max-width: 968px) {
+            .lessons-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .lessons-text {
+                text-align: center;
+            }
+            .lessons-text .deco-line {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .lessons-text .section-title {
+                text-align: center;
+            }
+            .lessons-image {
+                max-width: 400px;
+            }
+        }
+
+        .testimonials-logo-wrap {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2.5rem;
+        }
+        .testimonials-logo {
+            height: 130px;
+            width: auto;
+            display: block;
+            filter: drop-shadow(0 8px 30px rgba(0, 0, 0, 0.35));
+        }
+        @media (max-width: 768px) {
+            .testimonials-logo {
+                height: 100px;
+            }
         }
 
         /* ===================== TESTIMONIALS CAROUSEL ===================== */
@@ -1185,7 +1272,7 @@
         }
 
         .faq-item.open .faq-answer {
-            max-height: 1200px;  /* generous — accommodates the longest answers */
+            max-height: 1600px;  /* generous — accommodates expanded answers with line breaks */
         }
 
         .faq-answer-inner {
@@ -1193,7 +1280,11 @@
             font-size: 0.9rem;
             color: var(--warm-gray);
             line-height: 1.8;
-            white-space: pre-line;  /* preserve \n in data-en/data-fr so sub-bullets break naturally */
+        }
+
+        .faq-answer-inner strong {
+            color: var(--violet);
+            font-weight: 700;
         }
 
         /* ===================== CONTACT ===================== */
@@ -1281,6 +1372,17 @@
             font-size: 0.95rem;
             color: var(--white);
             font-weight: 500;
+        }
+
+        a.contact-link {
+            color: var(--white) !important;
+            text-decoration: none;
+            display: block;
+        }
+
+        a.contact-link:hover {
+            text-decoration: underline;
+            text-underline-offset: 3px;
         }
 
         .contact-social-row {
@@ -1400,8 +1502,8 @@
 
         /* ===================== FOOTER ===================== */
         .footer {
-            background: var(--charcoal);
-            color: rgba(255,255,255,0.5);
+            background: var(--violet-100);
+            color: var(--violet-dark);
             padding: 3rem 2rem;
         }
 
@@ -1425,9 +1527,9 @@
             font-size: 1.1rem;
         }
 
-        .footer-brand .french { color: rgba(255,255,255,0.8); }
-        .footer-brand .ly { color: var(--french-red-soft); }
-        .footer-brand .speaking { color: rgba(255,255,255,0.8); }
+        .footer-brand .french { color: var(--violet-dark); }
+        .footer-brand .ly { color: var(--red); }
+        .footer-brand .speaking { color: var(--violet-dark); }
 
         .footer-links {
             display: flex;
@@ -1437,14 +1539,17 @@
         }
 
         .footer-links a {
-            color: rgba(255,255,255,0.4);
+            color: var(--violet);
             text-decoration: none;
             font-size: 0.82rem;
+            font-weight: 600;
             transition: var(--transition);
         }
 
         .footer-links a:hover {
-            color: var(--white);
+            color: var(--violet-dark);
+            text-decoration: underline;
+            text-underline-offset: 3px;
         }
 
         .footer-copy {
@@ -1453,7 +1558,9 @@
             text-align: center;
             padding-top: 1.5rem;
             margin-top: 0.5rem;
-            border-top: 1px solid rgba(255,255,255,0.06);
+            color: var(--violet-dark);
+            opacity: 0.7;
+            border-top: 1px solid rgba(123, 19, 96, 0.15);
         }
 
         /* ===================== RESPONSIVE ===================== */
@@ -2097,11 +2204,7 @@
                 <img class="hero-image-collage" data-src-key="heroCollage" alt="A collage celebrating French culture: a Paris Métro sign, a baguette on a wooden board, an anthology of French poetry, a coffee cup with a notebook, a laptop workspace, and Louvre street signs.">
             </div>
             <div class="hero-content">
-                <div class="hero-badge">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
-                    <span data-en="Teaching French Since 2002" data-fr="Enseigne le français depuis 2002">Teaching French Since 2002</span>
-                </div>
-                <h1>
+<h1>
                     <span data-en="Learn French with" data-fr="Apprenez le français avec">Learn French with</span><br>
                     <span class="accent" data-en="the Proper Pronunciation!" data-fr="la bonne prononciation !">the Proper Pronunciation!</span>
                 </h1>
@@ -2154,17 +2257,17 @@
                         <h2 class="section-title" data-en="Bonjour ! Moi, c'est Karina." data-fr="Bonjour ! Moi, c'est Karina.">Bonjour ! Moi, c'est Karina.</h2>
                     </div>
 
-                    <p data-en="I&#x27;m a native French speaker from the South of France and dedicated language teacher with over 25 years of experience helping students navigate the learning pathway to the French language." data-fr="Je suis francophone native, originaire du sud de la France, et enseignante dévouée avec plus de 25 ans d&#x27;expérience à accompagner mes élèves sur le chemin de l&#x27;apprentissage du français.">
+                    <p data-en="I&#x27;m a native French speaker from the South of France and dedicated language teacher with over 25 years of experience helping students navigate the learning pathway to the French language." data-fr="Je suis française, originaire du sud de la France, et enseignante dévouée avec plus de 25 ans d&#x27;expérience à accompagner mes élèves sur le chemin de l&#x27;apprentissage du français.">
                         I'm a native French speaker from the South of France and dedicated language teacher with over 25 years of experience helping students navigate the learning pathway to the French language.
                     </p>
-                    <p data-en="I started teaching in 2000 in Oxford, UK, at the Alliance Française and created Frenchly Speaking two years later." data-fr="J&#x27;ai commencé à enseigner en 2000 à Oxford, au Royaume-Uni, à l&#x27;Alliance Française, et j&#x27;ai créé Frenchly Speaking deux ans plus tard.">
-                        I started teaching in 2000 in Oxford, UK, at the Alliance Française and created Frenchly Speaking two years later.
+                    <p data-en="I started teaching in 2000 in Oxford, UK, at the Alliance Française and created <em>Frenchly Speaking</em> two years later." data-fr="J&#x27;ai commencé à enseigner en 2000 à Oxford, au Royaume-Uni, à l&#x27;Alliance Française, et j&#x27;ai créé <em>Frenchly Speaking</em> deux ans plus tard.">
+                        I started teaching in 2000 in Oxford, UK, at the Alliance Française and created <em>Frenchly Speaking</em> two years later.
                     </p>
-                    <p data-en="I&#x27;m warm, encouraging, witty and kind but strict when it comes to the teaching, especially the pronunciation." data-fr="Je suis chaleureuse, encourageante, drôle et bienveillante mais stricte lorsqu&#x27;il s&#x27;agit de l&#x27;enseignement, surtout de la prononciation.">
-                        I'm warm, encouraging, witty and kind but strict when it comes to the teaching, especially the pronunciation.
+                    <p data-en="I&#x27;m <strong>warm, encouraging, witty and kind but strict</strong> when it comes to the teaching, especially the pronunciation." data-fr="Je suis <strong>chaleureuse, encourageante, drôle et bienveillante mais stricte</strong> lorsqu&#x27;il s&#x27;agit de l&#x27;enseignement, surtout de la prononciation.">
+                        I'm <strong>warm, encouraging, witty and kind but strict</strong> when it comes to the teaching, especially the pronunciation.
                     </p>
-                    <p data-en="I love to share my love of the French language and France&#x27;s quirky lifestyle. Come and join me ! :)" data-fr="J&#x27;adore partager mon amour de la langue française et de l&#x27;art de vivre à la française, plein de petites bizarreries. Venez me rejoindre ! :)">
-                        I love to share my love of the French language and France's quirky lifestyle. Come and join me ! :)
+                    <p data-en="I love to share my love of the French language and France&#x27;s quirky lifestyle. <strong>Come and join me ! :)</strong>" data-fr="J&#x27;adore partager mon amour de la langue française et de l&#x27;art de vivre à la française, plein de petites bizarreries. <strong>Venez me rejoindre ! :)</strong>">
+                        I love to share my love of the French language and France's quirky lifestyle. <strong>Come and join me ! :)</strong>
                     </p>
                 </div>
             </div>
@@ -2175,19 +2278,24 @@
     <!-- ========== THE LESSONS ========== -->
     <section class="section lessons-section" id="lessons">
         <div class="section-inner">
-            <div class="section-header center animate-on-scroll">
-                <div class="deco-line"></div>
-                <div class="section-label" data-en="The Lessons" data-fr="Les cours">The Lessons</div>
-                <h2 class="section-title" data-en="Passionate About Sharing The French Language" data-fr="Passionnée par le partage de la langue française">Passionate About Sharing The French Language</h2>
-                <p class="section-subtitle" data-en="I work on all aspects of the language: vocabulary, communication, reading, writing and the most important in my view, pronunciation — a must that needs to be set right from the start or will set in wrong for ever — and grammar — as it is very hard to understand on your own and is essential if your plan is to master the language. Duolingo certainly won&#x27;t help there! All this in the comfort of your own home or office. One-to-One teaching allows me to best suit the needs and pace of my students — I&#x27;m here to guide you every step of the way. ;)" data-fr="Je travaille sur tous les aspects de la langue : vocabulaire, communication, lecture, écriture — et surtout, à mon avis, la prononciation (un incontournable qui doit être bien posé dès le départ, sinon il restera mal acquis pour toujours) et la grammaire (très difficile à comprendre seul, et essentielle si votre objectif est de maîtriser la langue). Duolingo ne vous aidera certainement pas pour ça ! Le tout dans le confort de votre maison ou de votre bureau. L&#x27;enseignement individuel me permet de m&#x27;adapter au mieux aux besoins et au rythme de mes élèves — je suis là pour vous accompagner à chaque étape. ;)">
-                    I work on all aspects of the language: vocabulary, communication, reading, writing and the most important in my view, pronunciation — a must that needs to be set right from the start or will set in wrong for ever — and grammar — as it is very hard to understand on your own and is essential if your plan is to master the language. Duolingo certainly won't help there! All this in the comfort of your own home or office. One-to-One teaching allows me to best suit the needs and pace of my students — I'm here to guide you every step of the way. ;)
-                </p>
+            <div class="lessons-grid">
+                <div class="lessons-text animate-on-scroll">
+                    <div class="deco-line"></div>
+                    <div class="section-label" data-en="The Lessons" data-fr="Les Cours">The Lessons</div>
+                    <h2 class="section-title" data-en="Passionate About Sharing The French Language" data-fr="Passionnée par le partage de la langue française">Passionate About Sharing The French Language</h2>
+                    <p class="lessons-paragraph" data-en="I work on all aspects of the language: vocabulary, communication, reading, writing and the most important in my view, <strong>pronunciation</strong> — a must that needs to be set right from the start or will set in wrong for ever — and <strong>grammar</strong> — as it is very hard to understand on your own and is essential if your plan is to master the language. Duolingo certainly won&#x27;t help there! All this in the comfort of your own home or office.<br><br><strong>One-to-One teaching allows me to best suit the needs and pace of my students</strong> — I&#x27;m here to guide you every step of the way. ;)" data-fr="Je travaille sur tous les aspects de la langue : vocabulaire, communication, lecture, écriture — et surtout, à mon avis, la <strong>prononciation</strong> (un incontournable qui doit être bien posé dès le départ, sinon il restera mal acquis pour toujours) et la <strong>grammaire</strong> (très difficile à comprendre seul, et essentielle si votre objectif est de maîtriser la langue). Duolingo ne vous aidera certainement pas pour ça ! Le tout dans le confort de votre maison ou de votre bureau.<br><br><strong>L&#x27;enseignement individuel me permet de m&#x27;adapter au mieux aux besoins et au rythme de mes élèves</strong> — je suis là pour vous accompagner à chaque étape. ;)">
+                        I work on all aspects of the language: vocabulary, communication, reading, writing and the most important in my view, <strong>pronunciation</strong> — a must that needs to be set right from the start or will set in wrong for ever — and <strong>grammar</strong> — as it is very hard to understand on your own and is essential if your plan is to master the language. Duolingo certainly won't help there! All this in the comfort of your own home or office.<br><br><strong>One-to-One teaching allows me to best suit the needs and pace of my students</strong> — I'm here to guide you every step of the way. ;)
+                    </p>
+                </div>
+                <div class="lessons-image animate-on-scroll">
+                    <img class="lessons-collage" data-src-key="panneau2" alt="A collage of French country life: a French flag flying over fields, a rapeseed field, wine glasses at a long outdoor dinner, a rainbow over the countryside, regional cheeses at a market, a lavender field in Provence, and a tree-lined country road.">
+                </div>
             </div>
 
             <div class="lessons-features">
                 <div class="lesson-feature animate-on-scroll">
                     <div class="lesson-feature-icon">🇫🇷</div>
-                    <h4 data-en="Native French Speaker" data-fr="Francophone native">Native French Speaker</h4>
+                    <h4 data-en="Native French Speaker" data-fr="De langue maternelle française.">Native French Speaker</h4>
                     <p data-en="From the South of France" data-fr="Originaire du sud de la France">From the South of France</p>
                 </div>
                 <div class="lesson-feature animate-on-scroll">
@@ -2203,7 +2311,7 @@
                 <div class="lesson-feature animate-on-scroll">
                     <div class="lesson-feature-icon">💻</div>
                     <h4 data-en="Online Sessions" data-fr="Sessions en ligne">Online Sessions</h4>
-                    <p data-en="Learn from anywhere" data-fr="Apprenez de n&#x27;importe où">Learn from anywhere</p>
+                    <p data-en="Learn from anywhere" data-fr="Apprenez où que vous soyez">Learn from anywhere</p>
                 </div>
             </div>
         </div>
@@ -2223,8 +2331,8 @@
                 <div class="service-card tier-1 animate-on-scroll">
                     <div class="service-icon">💬</div>
                     <h3 data-en="Private Lesson" data-fr="Cours particulier">Private Lesson</h3>
-                    <p data-en="One-on-one sessions focused entirely on you. Perfect for beginners." data-fr="Sessions individuelles entièrement centrées sur vous. Idéal pour les débutants.">
-                        One-on-one sessions focused entirely on you. Perfect for beginners.
+                    <p data-en="One-on-one sessions focused entirely on you.<br>Perfect for beginners." data-fr="Sessions individuelles entièrement centrées sur vous.<br>Idéal pour les débutants.">
+                        One-on-one sessions focused entirely on you.<br>Perfect for beginners.
                     </p>
                     <div class="service-price">
                         <span class="amount">42</span>
@@ -2244,35 +2352,35 @@
                         <span class="amount">25</span>
                         <span class="currency">€</span>
                     </div>
-                    <div class="service-duration" data-en="per person, per hour" data-fr="par personne, de l&#x27;heure">per person, per hour</div>
+                    <div class="service-duration" data-en="per person, per hour" data-fr="de l&#x27;heure par personne">per person, per hour</div>
                     <div class="service-price-alt" data-en="around £25 / $30 (07/2026)" data-fr="environ £25 / $30 (07/2026)">around £25 / $30 (07/2026)</div>
                 </div>
 
                 <div class="service-card tier-3 animate-on-scroll">
                     <div class="service-icon">👨‍👩‍👧</div>
                     <h3 data-en="Group Lesson" data-fr="Cours en groupe">Group Lesson</h3>
-                    <p data-en="For students with the same level of knowledge. 3 to 4 people." data-fr="Pour des élèves du même niveau. 3 à 4 personnes.">
-                        For students with the same level of knowledge. 3 to 4 people.
+                    <p data-en="For students with the same level of knowledge.<br>3 to 4 people." data-fr="Pour des élèves du même niveau.<br>3 à 4 personnes.">
+                        For students with the same level of knowledge.<br>3 to 4 people.
                     </p>
                     <div class="service-price">
                         <span class="amount">15</span>
                         <span class="currency">€</span>
                     </div>
-                    <div class="service-duration" data-en="per person, per hour" data-fr="par personne, de l&#x27;heure">per person, per hour</div>
+                    <div class="service-duration" data-en="per person, per hour" data-fr="de l&#x27;heure par personne">per person, per hour</div>
                     <div class="service-price-alt" data-en="around £15 / $20 (07/2026)" data-fr="environ £15 / $20 (07/2026)">around £15 / $20 (07/2026)</div>
                 </div>
 
                 <div class="service-card tier-4 animate-on-scroll">
                     <div class="service-icon">🗣️</div>
                     <h3 data-en="Conversation" data-fr="Conversation">Conversation</h3>
-                    <p data-en="Practice under the vigilant eye of a helpful teacher. Intermediate to advanced. 4 to 6 people." data-fr="Pratiquez sous l&#x27;œil attentif d&#x27;une enseignante bienveillante. Niveau intermédiaire à avancé. 4 à 6 personnes.">
-                        Practice under the vigilant eye of a helpful teacher. Intermediate to advanced. 4 to 6 people.
+                    <p data-en="Practice under the vigilant eye of a helpful teacher. Intermediate to advanced.<br>4 to 6 people." data-fr="Pratiquez sous l&#x27;œil attentif d&#x27;une enseignante bienveillante. Niveau intermédiaire à avancé.<br>4 à 6 personnes.">
+                        Practice under the vigilant eye of a helpful teacher. Intermediate to advanced.<br>4 to 6 people.
                     </p>
                     <div class="service-price">
                         <span class="amount">10</span>
                         <span class="currency">€</span>
                     </div>
-                    <div class="service-duration" data-en="per person, per hour" data-fr="par personne, de l&#x27;heure">per person, per hour</div>
+                    <div class="service-duration" data-en="per person, per hour" data-fr="de l&#x27;heure par personne">per person, per hour</div>
                     <div class="service-price-alt" data-en="around £10 / $12 (07/2026)" data-fr="environ £10 / $12 (07/2026)">around £10 / $12 (07/2026)</div>
                 </div>
             </div>
@@ -2286,6 +2394,9 @@
     <!-- ========== TESTIMONIALS ========== -->
     <section class="section testimonials" id="testimonials">
         <div class="section-inner">
+            <div class="testimonials-logo-wrap">
+                <img class="testimonials-logo" data-src-key="logo" alt="Frenchly Speaking">
+            </div>
             <div class="section-header center animate-on-scroll">
                 <div class="deco-line"></div>
                 <div class="section-label" data-en="Testimonials" data-fr="Témoignages">Testimonials</div>
@@ -2392,7 +2503,7 @@
                         <div class="testimonial-card">
                             <div class="testimonial-stars">★★★★★</div>
                             <div class="testimonial-quote">"</div>
-                            <p class="testimonial-text" data-en="During my first year living in France I used online tools to learn French. But I did not truly progress until I started working with Karina. She is not just a great conversationalist. She is a real teacher with a clear plan. She takes the instruction seriously, yet the atmosphere stays relaxed and friendly. I highly recommend Karina" data-fr="Pendant ma première année en France, j&#x27;utilisais des outils en ligne pour apprendre le français. Mais je n&#x27;ai vraiment progressé qu&#x27;en commençant à travailler avec Karina. Ce n&#x27;est pas qu&#x27;une bonne conversationaliste : c&#x27;est une vraie enseignante avec un plan clair. Elle prend l&#x27;enseignement au sérieux, tout en gardant une atmosphère détendue et amicale. Je recommande vivement Karina">
+                            <p class="testimonial-text" data-en="During my first year living in France I used online tools to learn French. But I did not truly progress until I started working with Karina. She is not just a great conversationalist. She is a real teacher with a clear plan. She takes the instruction seriously, yet the atmosphere stays relaxed and friendly. I highly recommend Karina" data-fr="Pendant ma première année en France, j&#x27;utilisais des outils en ligne pour apprendre le français. Mais je n&#x27;ai vraiment progressé qu&#x27;en commençant à travailler avec Karina. Ce n&#x27;est pas qu&#x27;une personne avec qui il est agréable de discuter : c&#x27;est une vraie enseignante avec un plan clair. Elle prend l&#x27;enseignement au sérieux, tout en gardant une atmosphère détendue et amicale. Je recommande vivement Karina">
                                 During my first year living in France I used online tools to learn French. But I did not truly progress until I started working with Karina. She is not just a great conversationalist. She is a real teacher with a clear plan. She takes the instruction seriously, yet the atmosphere stays relaxed and friendly. I highly recommend Karina
                             </p>
                             <div class="testimonial-author">
@@ -2409,7 +2520,7 @@
                         <div class="testimonial-card">
                             <div class="testimonial-stars">★★★★★</div>
                             <div class="testimonial-quote">"</div>
-                            <p class="testimonial-text" data-en="Karina is the most engaging teacher you could ever wish for. She tailors her lessons entirely to you. She combines a huge amount of skill and teaching knowledge with exceptional personability. I always looked forward to every lesson and came out every week with more language skills, and having had a really good chat (in French!!) along the way. Within a matter of weeks, she had me chatting away in France, when beforehand I could barely place an order in a restaurant. She was invaluable to our whole family while we were learning with her and I cannot recommend her highly enough!" data-fr="Karina est l&#x27;enseignante la plus captivante qu&#x27;on puisse imaginer. Elle adapte ses cours entièrement à vous. Elle allie d&#x27;énormes compétences pédagogiques à une personnalité exceptionnelle. J&#x27;attendais chaque cours avec impatience et j&#x27;en ressortais chaque semaine avec plus de vocabulaire — et après avoir eu une vraie bonne conversation (en français !!) au passage. En quelques semaines, j&#x27;arrivais à converser en France, alors qu&#x27;auparavant je peinais à passer une commande au restaurant. Elle a été inestimable pour toute notre famille pendant qu&#x27;on apprenait avec elle, et je la recommande sans réserve !">
+                            <p class="testimonial-text" data-en="Karina is the most engaging teacher you could ever wish for. She tailors her lessons entirely to you. She combines a huge amount of skill and teaching knowledge with exceptional personability. I always looked forward to every lesson and came out every week with more language skills, and having had a really good chat (in French!!) along the way. Within a matter of weeks, she had me chatting away in France, when beforehand I could barely place an order in a restaurant. She was invaluable to our whole family while we were learning with her and I cannot recommend her highly enough!" data-fr="Karina est l&#x27;enseignante la plus captivante qu&#x27;on puisse imaginer. Elle adapte ses cours entièrement à vous. Elle allie d&#x27;énormes compétences pédagogiques à une personnalité exceptionnelle. J&#x27;attendais chaque cours avec impatience et j&#x27;en ressortais chaque semaine avec plus de vocabulaire — et après avoir eu une vraie bonne conversation (en français !!) au passage. En quelques semaines, j&#x27;arrivais à converser en France, alors qu&#x27;auparavant je peinais à passer une commande au restaurant. Elle a été inestimable pour toute notre famille quand on apprenait avec elle, et je la recommande sans réserve !">
                                 Karina is the most engaging teacher you could ever wish for. She tailors her lessons entirely to you. She combines a huge amount of skill and teaching knowledge with exceptional personability. I always looked forward to every lesson and came out every week with more language skills, and having had a really good chat (in French!!) along the way. Within a matter of weeks, she had me chatting away in France, when beforehand I could barely place an order in a restaurant. She was invaluable to our whole family while we were learning with her and I cannot recommend her highly enough!
                             </p>
                             <div class="testimonial-author">
@@ -2477,7 +2588,7 @@
                         <div class="testimonial-card">
                             <div class="testimonial-stars">★★★★★</div>
                             <div class="testimonial-quote">"</div>
-                            <p class="testimonial-text" data-en="Karina is great! She had been my private French teacher for 2 years and I strongly recommend her. Our lessons were never heavy or boring; on the contrary, time always flew by, also after a long day at work. She helped me a lot with everything (e.g. pronunciation, vocabulary, grammar, informal language and many interesting insights on the French culture). We used to have our lessons on Skype and this allowed me to be able to always find time to improve my French. Even in busy days, I could switch to my French lesson in a blink of an eye, including times when I was travelling using just my laptop and my earphones." data-fr="Karina est formidable ! Elle a été ma professeure particulière pendant 2 ans et je la recommande vivement. Nos cours n&#x27;étaient jamais lourds ni ennuyeux ; au contraire, le temps passait toujours vite, même après une longue journée. Elle m&#x27;a beaucoup aidé sur tout (par exemple : prononciation, vocabulaire, grammaire, langage informel et de nombreux aperçus de la culture française). Nous avions cours sur Skype, ce qui me permettait de toujours trouver le temps de progresser. Même les jours chargés, je pouvais basculer sur mon cours en un clin d&#x27;œil, y compris en déplacement avec juste mon ordinateur et mes écouteurs.">
+                            <p class="testimonial-text" data-en="Karina is great! She had been my private French teacher for 2 years and I strongly recommend her. Our lessons were never heavy or boring; on the contrary, time always flew by, also after a long day at work. She helped me a lot with everything (e.g. pronunciation, vocabulary, grammar, informal language and many interesting insights on the French culture). We used to have our lessons on Skype and this allowed me to be able to always find time to improve my French. Even in busy days, I could switch to my French lesson in a blink of an eye, including times when I was travelling using just my laptop and my earphones." data-fr="Karina est formidable ! Elle a été ma professeure particulière pendant 2 ans et je la recommande vivement. Nos cours n&#x27;étaient jamais lourds ni ennuyeux ; au contraire, le temps passait toujours vite, même après une longue journée. Elle m&#x27;a beaucoup aidé sur tout (par exemple : prononciation, vocabulaire, grammaire, langage informel et de nombreux aperçus de la culture française). Nous avions cours sur Skype, ce qui me permettait de toujours trouver le temps de progresser. Même les journées chargées, je pouvais basculer sur mon cours en un clin d&#x27;œil, y compris en déplacement avec juste mon ordinateur et mes écouteurs.">
                                 Karina is great! She had been my private French teacher for 2 years and I strongly recommend her. Our lessons were never heavy or boring; on the contrary, time always flew by, also after a long day at work. She helped me a lot with everything (e.g. pronunciation, vocabulary, grammar, informal language and many interesting insights on the French culture). We used to have our lessons on Skype and this allowed me to be able to always find time to improve my French. Even in busy days, I could switch to my French lesson in a blink of an eye, including times when I was travelling using just my laptop and my earphones.
                             </p>
                             <div class="testimonial-author">
@@ -2634,7 +2745,7 @@
                         <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="faq-answer">
-                        <div class="faq-answer-inner" data-en="Absolutely not! I will be here to set your pronunciation spot on right from the beginning and guide you through the French grammar maze." data-fr="Absolument pas ! Je serai là pour bien poser votre prononciation dès le départ et vous guider à travers le labyrinthe de la grammaire française.">Absolutely not! I will be here to set your pronunciation spot on right from the beginning and guide you through the French grammar maze.</div>
+                        <div class="faq-answer-inner" data-en="<strong>Absolutely not!</strong> I will be here to set your pronunciation spot on right from the beginning and guide you through the French grammar maze." data-fr="<strong>Absolument pas !</strong> Je serai là pour vous aider à bien structurer votre prononciation dès le départ et vous guider à travers le labyrinthe de la grammaire française."><strong>Absolutely not!</strong> I will be here to set your pronunciation spot on right from the beginning and guide you through the French grammar maze.</div>
                     </div>
                 </div>
 
@@ -2644,7 +2755,7 @@
                         <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="faq-answer">
-                        <div class="faq-answer-inner" data-en="YES!!! I cannot stress this enough. If your pronunciation is off, people will not understand you and all your hard work will have been useless. How unfortunate! If you learn 100 words but can only pronounce 50 correctly, then, in truth you only can use 50. A mispronounced word won&#x27;t be understood by those you&#x27;ll talk to, and you&#x27;ll not recognize the word when spoken to you by the locals. It&#x27;s a lose-lose situation." data-fr="OUI !!! Je ne le répéterai jamais assez. Si votre prononciation est mauvaise, les gens ne vous comprendront pas et tout votre travail aura été inutile. Quel dommage ! Si vous apprenez 100 mots mais n&#x27;en prononcez correctement que 50, en réalité vous n&#x27;en avez que 50. Un mot mal prononcé ne sera pas compris par ceux à qui vous parlerez, et vous ne le reconnaîtrez pas non plus quand les Français vous le diront. C&#x27;est perdant-perdant.">YES!!! I cannot stress this enough. If your pronunciation is off, people will not understand you and all your hard work will have been useless. How unfortunate! If you learn 100 words but can only pronounce 50 correctly, then, in truth you only can use 50. A mispronounced word won't be understood by those you'll talk to, and you'll not recognize the word when spoken to you by the locals. It's a lose-lose situation.</div>
+                        <div class="faq-answer-inner" data-en="<strong>YES!!! I cannot stress this enough.</strong> If your pronunciation is off, people will not understand you and all your hard work will have been useless. How unfortunate!<br><br>If you learn 100 words but can only pronounce 50 correctly, then, in truth you only can use 50.<br><br>A mispronounced word won&#x27;t be understood by those you&#x27;ll talk to, and you&#x27;ll not recognize the word when spoken to you by the locals. It&#x27;s a lose-lose situation." data-fr="<strong>OUI !!! Je ne le répéterai jamais assez.</strong> Si votre prononciation est mauvaise, les gens ne vous comprendront pas et tout votre travail aura été inutile. Quel dommage !<br><br>Si vous apprenez 100 mots mais n&#x27;en prononcez correctement que 50, en réalité vous n&#x27;en avez que 50.<br><br>Un mot mal prononcé ne sera pas compris par ceux à qui vous parlerez, et vous ne le reconnaîtrez pas non plus quand les Français vous le diront. Tout le monde y perdra."><strong>YES!!! I cannot stress this enough.</strong> If your pronunciation is off, people will not understand you and all your hard work will have been useless. How unfortunate!<br><br>If you learn 100 words but can only pronounce 50 correctly, then, in truth you only can use 50.<br><br>A mispronounced word won't be understood by those you'll talk to, and you'll not recognize the word when spoken to you by the locals. It's a lose-lose situation.</div>
                     </div>
                 </div>
 
@@ -2654,7 +2765,7 @@
                         <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="faq-answer">
-                        <div class="faq-answer-inner" data-en="That&#x27;s the million-dollar question! There are many factors involved. It will depend on your commitment — the amount of work you&#x27;ll put into your study outside the lessons — and your memory — unfortunately we do not have our say on this matter, some are luckier than others. But do not fret, you&#x27;ll get there. I&#x27;ll help you and be there for you every step of the way to achieve your goal. For information purposes, it took one of my best students two years of studying, taking two hours of lessons per week — plus studying, reading books, watching French films — to be fluent enough to move to France, setting all utilities, negotiating and buying a car on her own! (Bravo Vanessa !! ;) )" data-fr="C&#x27;est la question à un million ! Plusieurs facteurs entrent en jeu. Cela dépendra de votre engagement — du travail fourni en dehors des cours — et de votre mémoire — malheureusement, là-dessus on n&#x27;a pas notre mot à dire, certains ont plus de chance que d&#x27;autres. Mais ne vous inquiétez pas, vous y arriverez. Je vous aiderai et serai là à chaque étape pour atteindre votre objectif. Pour info, il a fallu à l&#x27;une de mes meilleures élèves deux ans d&#x27;études, à raison de deux heures de cours par semaine — plus du travail personnel, des lectures, des films français — pour devenir assez fluente pour s&#x27;installer en France, mettre en place toutes les utilités, négocier et acheter une voiture toute seule ! (Bravo Vanessa !! ;) )">That's the million-dollar question! There are many factors involved. It will depend on your commitment — the amount of work you'll put into your study outside the lessons — and your memory — unfortunately we do not have our say on this matter, some are luckier than others. But do not fret, you'll get there. I'll help you and be there for you every step of the way to achieve your goal. For information purposes, it took one of my best students two years of studying, taking two hours of lessons per week — plus studying, reading books, watching French films — to be fluent enough to move to France, setting all utilities, negotiating and buying a car on her own! (Bravo Vanessa !! ;) )</div>
+                        <div class="faq-answer-inner" data-en="That&#x27;s the million-dollar question!<br><br>There are many factors involved. <strong>It will depend on your commitment</strong> — the amount of work you&#x27;ll put into your study outside the lessons — <strong>and your memory</strong> — unfortunately we do not have our say on this matter, some are luckier than others. But do not fret, you&#x27;ll get there. I&#x27;ll help you and be there for you every step of the way to achieve your goal.<br><br>For information purposes, it took one of my best students two years of studying, taking two hours of lessons per week — plus studying, reading books, watching French films — to be fluent enough to move to France, setting all utilities, negotiating and buying a car on her own! (Bravo Vanessa !! ;) )" data-fr="C&#x27;est la question à un million !<br><br>Plusieurs facteurs entrent en jeu. <strong>Cela dépendra de votre engagement</strong> — du travail fourni en dehors des cours — <strong>et de votre mémoire</strong> — malheureusement, là-dessus on n&#x27;a pas notre mot à dire, certains ont plus de chance que d&#x27;autres. Mais ne vous inquiétez pas, vous y arriverez. Je vous aiderai et serai là à chaque étape pour atteindre votre objectif.<br><br>Pour info, il a fallu à l&#x27;une de mes meilleures élèves deux ans d&#x27;études, à raison de deux heures de cours par semaine — plus du travail personnel, des lectures, des films français — pour parler assez couramment pour s&#x27;installer en France, mettre en place tous les services publics, négocier et acheter une voiture toute seule ! (Bravo Vanessa !! ;) )">That's the million-dollar question!<br><br>There are many factors involved. <strong>It will depend on your commitment</strong> — the amount of work you'll put into your study outside the lessons — <strong>and your memory</strong> — unfortunately we do not have our say on this matter, some are luckier than others. But do not fret, you'll get there. I'll help you and be there for you every step of the way to achieve your goal.<br><br>For information purposes, it took one of my best students two years of studying, taking two hours of lessons per week — plus studying, reading books, watching French films — to be fluent enough to move to France, setting all utilities, negotiating and buying a car on her own! (Bravo Vanessa !! ;) )</div>
                     </div>
                 </div>
 
@@ -2664,7 +2775,7 @@
                         <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="faq-answer">
-                        <div class="faq-answer-inner" data-en="Yes! This allows anyone around the world to join me and have a lesson. Some during their lunch break at work, some at home, while the kids are at school or in the next room, or after their workday. I&#x27;ve had students from the United States, Canada, the United Kingdom, Spain, Italy, Germany… I also have among my students many expatriates living in France who need to improve their French to pass the exam to extent their visa or to better integrate." data-fr="Oui ! Cela permet à n&#x27;importe qui dans le monde de me rejoindre pour un cours. Certains pendant leur pause déjeuner au travail, d&#x27;autres à la maison, pendant que les enfants sont à l&#x27;école ou dans la pièce d&#x27;à côté, ou après leur journée de travail. J&#x27;ai eu des élèves des États-Unis, du Canada, du Royaume-Uni, d&#x27;Espagne, d&#x27;Italie, d&#x27;Allemagne… J&#x27;ai aussi parmi mes élèves de nombreux expatriés vivant en France qui souhaitent améliorer leur français pour passer l&#x27;examen et étendre leur visa, ou mieux s&#x27;intégrer.">Yes! This allows anyone around the world to join me and have a lesson. Some during their lunch break at work, some at home, while the kids are at school or in the next room, or after their workday. I've had students from the United States, Canada, the United Kingdom, Spain, Italy, Germany… I also have among my students many expatriates living in France who need to improve their French to pass the exam to extent their visa or to better integrate.</div>
+                        <div class="faq-answer-inner" data-en="Yes! This allows anyone around the world to join me and have a lesson. Some during their lunch break at work, some at home, while the kids are at school or in the next room, or after their workday.<br><br>I&#x27;ve had students from the United States, Canada, the United Kingdom, Spain, Italy, Germany…<br><br>I also have among my students many expatriates living in France who need to improve their French to pass the exam to extent their visa or to better integrate." data-fr="Oui ! Cela permet à n&#x27;importe qui dans le monde de me rejoindre pour un cours. Certains pendant leur pause déjeuner au travail, d&#x27;autres à la maison, pendant que les enfants sont à l&#x27;école ou dans la pièce d&#x27;à côté, ou après leur journée de travail.<br><br>J&#x27;ai eu des élèves des États-Unis, du Canada, du Royaume-Uni, d&#x27;Espagne, d&#x27;Italie, d&#x27;Allemagne…<br><br>J&#x27;ai aussi parmi mes élèves de nombreux expatriés vivant en France qui souhaitent améliorer leur français pour passer l&#x27;examen et étendre leur visa, ou mieux s&#x27;intégrer.">Yes! This allows anyone around the world to join me and have a lesson. Some during their lunch break at work, some at home, while the kids are at school or in the next room, or after their workday.<br><br>I've had students from the United States, Canada, the United Kingdom, Spain, Italy, Germany…<br><br>I also have among my students many expatriates living in France who need to improve their French to pass the exam to extent their visa or to better integrate.</div>
                     </div>
                 </div>
 
@@ -2674,16 +2785,7 @@
                         <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="faq-answer">
-                        <div class="faq-answer-inner" data-en="Yes.
-There are two types of groups:
-✴ Learning groups, for those who look for a more affordable option than the private lessons. Groups on strict levels: A1 / A2-B1 / B2-C1 / C2. 3 to 4 people only, so you do not feel lost in a class full of people.
-✴ A conversational group, for whose who want to practice under guidance and supervision of a teacher. Level B1 onwards. 4 to 6 people, so each one has the space to express oneself." data-fr="Oui.
-Il existe deux types de groupes :
-✴ Les groupes d&#x27;apprentissage, pour ceux qui cherchent une option plus abordable que les cours particuliers. Groupes à niveaux stricts : A1 / A2-B1 / B2-C1 / C2. 3 à 4 personnes maximum, pour que vous ne vous sentiez pas perdu dans une classe pleine.
-✴ Un groupe de conversation, pour ceux qui veulent pratiquer sous l&#x27;œil bienveillant d&#x27;une enseignante. À partir du niveau B1. 4 à 6 personnes, pour que chacun ait l&#x27;espace de s&#x27;exprimer.">Yes.
-There are two types of groups:
-✴ Learning groups, for those who look for a more affordable option than the private lessons. Groups on strict levels: A1 / A2-B1 / B2-C1 / C2. 3 to 4 people only, so you do not feel lost in a class full of people.
-✴ A conversational group, for whose who want to practice under guidance and supervision of a teacher. Level B1 onwards. 4 to 6 people, so each one has the space to express oneself.</div>
+                        <div class="faq-answer-inner" data-en="Yes.<br>There are two types of groups:<br><br>✴ Learning groups, for those who look for a more affordable option than the private lessons. Groups on strict levels: A1 / A2-B1 / B2-C1 / C2. <strong>3 to 4 people</strong> only, so you do not feel lost in a class full of people.<br><br>✴ A conversational group, for whose who want to practice under guidance and supervision of a teacher. Level B1 onwards. <strong>4 to 6 people</strong>, so each one has the space to express oneself." data-fr="Oui.<br>Il existe deux types de groupes :<br><br>✴ Les groupes d&#x27;apprentissage, pour ceux qui cherchent une option plus abordable que les cours particuliers. Groupes à niveaux stricts : A1 / A2-B1 / B2-C1 / C2. <strong>3 à 4 personnes</strong> maximum, pour que vous ne vous sentiez pas perdu dans une classe pleine.<br><br>✴ Un groupe de conversation, pour ceux qui veulent pratiquer sous l&#x27;œil bienveillant d&#x27;une enseignante. À partir du niveau B1. <strong>4 à 6 personnes</strong>, pour que chacun ait l&#x27;espace de s&#x27;exprimer.">Yes.<br>There are two types of groups:<br><br>✴ Learning groups, for those who look for a more affordable option than the private lessons. Groups on strict levels: A1 / A2-B1 / B2-C1 / C2. <strong>3 to 4 people</strong> only, so you do not feel lost in a class full of people.<br><br>✴ A conversational group, for whose who want to practice under guidance and supervision of a teacher. Level B1 onwards. <strong>4 to 6 people</strong>, so each one has the space to express oneself.</div>
                     </div>
                 </div>
 
@@ -2693,22 +2795,7 @@ There are two types of groups:
                         <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="faq-answer">
-                        <div class="faq-answer-inner" data-en="✴ Concerning private tuition:
-Cancellation the day prior to the session or the same day, the session will be lost.
-Cancellation less than 7 days prior to the session, you can rebook the lesson within a month, depending on my availability. Otherwise, it will be lost.
-Besides the Christmas-New year&#x27;s eve week, you can cancel up to 4 weeks a year for holidays. Notice must be made as soon as possible and with a minimum of a week&#x27;s notice.
-✴ Concerning duo or group lessons:
-Any lesson not attended will be lost." data-fr="✴ Concernant les cours particuliers :
-Annulation la veille ou le jour même : la séance sera perdue.
-Annulation à moins de 7 jours de la séance : vous pourrez reprogrammer le cours dans le mois, selon mes disponibilités. Sinon, il sera perdu.
-Hors semaine de Noël–Nouvel An, vous pouvez annuler jusqu&#x27;à 4 semaines par an pour les vacances. Le préavis doit être donné dès que possible et au minimum une semaine à l&#x27;avance.
-✴ Concernant les cours en duo ou en groupe :
-Toute séance non honorée est perdue.">✴ Concerning private tuition:
-Cancellation the day prior to the session or the same day, the session will be lost.
-Cancellation less than 7 days prior to the session, you can rebook the lesson within a month, depending on my availability. Otherwise, it will be lost.
-Besides the Christmas-New year's eve week, you can cancel up to 4 weeks a year for holidays. Notice must be made as soon as possible and with a minimum of a week's notice.
-✴ Concerning duo or group lessons:
-Any lesson not attended will be lost.</div>
+                        <div class="faq-answer-inner" data-en="✴ Concerning <strong>private tuition</strong>:<br>Cancellation the day prior to the session or the same day, the session will be lost.<br><br>Cancellation less than 7 days prior to the session, you can rebook the lesson within a month, depending on my availability. Otherwise, it will be lost.<br><br>Besides the Christmas-New year&#x27;s eve week, you can cancel up to 4 weeks a year for holidays. Notice must be made as soon as possible and with a minimum of a week&#x27;s notice.<br><br>✴ Concerning <strong>duo or group lessons</strong>:<br>Any lesson not attended will be lost." data-fr="✴ Concernant les <strong>cours particuliers</strong> :<br>Annulation la veille ou le jour même : la séance sera perdue.<br><br>Annulation à moins de 7 jours de la séance : vous pourrez reprogrammer le cours dans le mois, selon mes disponibilités. Sinon, il sera perdu.<br><br>Hors semaine de Noël–Nouvel An, vous pouvez annuler jusqu&#x27;à 4 semaines par an pour les vacances. Le préavis doit être donné dès que possible et au minimum une semaine à l&#x27;avance.<br><br>✴ Concernant les <strong>cours en duo ou en groupe</strong> :<br>Toute séance non honorée est perdue.">✴ Concerning <strong>private tuition</strong>:<br>Cancellation the day prior to the session or the same day, the session will be lost.<br><br>Cancellation less than 7 days prior to the session, you can rebook the lesson within a month, depending on my availability. Otherwise, it will be lost.<br><br>Besides the Christmas-New year's eve week, you can cancel up to 4 weeks a year for holidays. Notice must be made as soon as possible and with a minimum of a week's notice.<br><br>✴ Concerning <strong>duo or group lessons</strong>:<br>Any lesson not attended will be lost.</div>
                     </div>
                 </div>
 
@@ -2718,7 +2805,7 @@ Any lesson not attended will be lost.</div>
                         <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="faq-answer">
-                        <div class="faq-answer-inner" data-en="Once you&#x27;ll have followed a couple of sessions, to make sure the tuition suits you, you&#x27;ll have to buy a few books (for grammar, vocabulary and communication — or a specific book if you&#x27;re preparing an exam), so you can have material to work on, in and out of class. We&#x27;ll also use links and screenshots. You&#x27;ll also need a notebook to write down your own material." data-fr="Une fois que vous aurez suivi quelques séances, pour vous assurer que l&#x27;enseignement vous convient, il vous faudra acheter quelques livres (de grammaire, de vocabulaire et de communication — ou un livre spécifique si vous préparez un examen), pour avoir de quoi travailler en cours et en dehors. Nous utiliserons aussi des liens et des captures d&#x27;écran. Il vous faudra également un cahier pour noter votre propre matériel.">Once you'll have followed a couple of sessions, to make sure the tuition suits you, you'll have to buy a few books (for grammar, vocabulary and communication — or a specific book if you're preparing an exam), so you can have material to work on, in and out of class. We'll also use links and screenshots. You'll also need a notebook to write down your own material.</div>
+                        <div class="faq-answer-inner" data-en="Once you&#x27;ll have followed a couple of sessions, to make sure the tuition suits you, you&#x27;ll have to buy a few books (for grammar, vocabulary and communication — or a specific book if you&#x27;re preparing an exam), so you can have material to work on, in and out of class.<br><br>We&#x27;ll also use links and screenshots.<br><br>You&#x27;ll also need a notebook to write down your own material." data-fr="Une fois que vous aurez suivi quelques séances, pour vous assurer que l&#x27;enseignement vous convient, il vous faudra acheter quelques livres (de grammaire, de vocabulaire et de communication — ou un livre spécifique si vous préparez un examen), pour avoir de quoi travailler en cours et en dehors.<br><br>Nous utiliserons aussi des liens et des captures d&#x27;écran.<br><br>Il vous faudra également un cahier pour prendre des notes.">Once you'll have followed a couple of sessions, to make sure the tuition suits you, you'll have to buy a few books (for grammar, vocabulary and communication — or a specific book if you're preparing an exam), so you can have material to work on, in and out of class.<br><br>We'll also use links and screenshots.<br><br>You'll also need a notebook to write down your own material.</div>
                     </div>
                 </div>
 
@@ -2728,7 +2815,7 @@ Any lesson not attended will be lost.</div>
                         <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="faq-answer">
-                        <div class="faq-answer-inner" data-en="Contact me and we&#x27;ll book a visio call first. This will allow me to assess your level and for you to talk about your goals and expectations. We can then book a trial session. In the event that it didn&#x27;t suit you, you won&#x27;t have to pay for it. If it does, we&#x27;ll schedule your future sessions together." data-fr="Contactez-moi et nous fixerons d&#x27;abord un appel visio. Cela me permettra d&#x27;évaluer votre niveau et à vous d&#x27;exposer vos objectifs et attentes. Nous pourrons ensuite réserver une séance d&#x27;essai. Si elle ne vous convient pas, vous n&#x27;aurez pas à la payer. Si elle vous convient, nous planifierons vos séances futures ensemble.">Contact me and we'll book a visio call first. This will allow me to assess your level and for you to talk about your goals and expectations. We can then book a trial session. In the event that it didn't suit you, you won't have to pay for it. If it does, we'll schedule your future sessions together.</div>
+                        <div class="faq-answer-inner" data-en="Contact me and we&#x27;ll book a <strong>visio call first</strong>. This will allow me to assess your level and for you to talk about your goals and expectations.<br><br><strong>We can then book a trial session</strong>. In the event that it didn&#x27;t suit you, you won&#x27;t have to pay for it. If it does, we&#x27;ll schedule your future sessions together." data-fr="Contactez-moi et nous fixerons d&#x27;abord <strong>un appel visio</strong>. Cela me permettra d&#x27;évaluer votre niveau et à vous d&#x27;exposer vos objectifs et attentes.<br><br><strong>Nous pourrons ensuite réserver une séance d&#x27;essai</strong>. Si elle ne vous convient pas, vous n&#x27;aurez pas à la payer. Si elle vous convient, nous planifierons vos séances futures ensemble.">Contact me and we'll book a <strong>visio call first</strong>. This will allow me to assess your level and for you to talk about your goals and expectations.<br><br><strong>We can then book a trial session</strong>. In the event that it didn't suit you, you won't have to pay for it. If it does, we'll schedule your future sessions together.</div>
                     </div>
                 </div>
             </div>
@@ -2756,7 +2843,7 @@ Any lesson not attended will be lost.</div>
                         </div>
                         <div>
                             <div class="contact-detail-label" data-en="Email" data-fr="E-mail">Email</div>
-                            <div class="contact-detail-value">frenchlyspeaking@hotmail.com</div>
+                            <a class="contact-detail-value contact-link" href="mailto:frenchlyspeaking@hotmail.com">frenchlyspeaking@hotmail.com</a>
                         </div>
                     </div>
 
@@ -2766,7 +2853,7 @@ Any lesson not attended will be lost.</div>
                         </div>
                         <div>
                             <div class="contact-detail-label" data-en="Phone" data-fr="Téléphone">Phone</div>
-                            <div class="contact-detail-value">+33 6 88 10 97 95</div>
+                            <a class="contact-detail-value contact-link" href="tel:+33688109795">+33 6 88 10 97 95</a>
                         </div>
                     </div>
 
@@ -2776,7 +2863,17 @@ Any lesson not attended will be lost.</div>
                         </div>
                         <div>
                             <div class="contact-detail-label" data-en="Location" data-fr="Adresse">Location</div>
-                            <div class="contact-detail-value" data-en="Montrollet, France (online worldwide)" data-fr="Montrollet, France (en ligne dans le monde entier)">Montrollet, France (online worldwide)</div>
+                            <div class="contact-detail-value" data-en="5 le Breuil, 16420 Montrollet, France" data-fr="5 le Breuil, 16420 Montrollet, France">5 le Breuil, 16420 Montrollet, France</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail">
+                        <div class="contact-detail-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3zM3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
+                        </div>
+                        <div>
+                            <div class="contact-detail-label" data-en="SIRET" data-fr="N° SIRET">SIRET</div>
+                            <div class="contact-detail-value">792 288 961 00024</div>
                         </div>
                     </div>
 
@@ -2857,10 +2954,11 @@ Any lesson not attended will be lost.</div>
 
             <h3 data-en="2. Website Host" data-fr="2. Hébergeur du site">2. Website Host</h3>
             <ul>
-                <li><span data-en="Company name:" data-fr="Raison sociale :">Company name:</span> IONOS SARL</li>
-                <li><span data-en="Address:" data-fr="Adresse :">Address:</span> 7 place de la Gare, BP 70109, 57201 Sarreguemines Cedex, France</li>
-                <li><span data-en="Phone:" data-fr="Téléphone :">Phone:</span> +33 9 70 80 89 11</li>
-                <li><span data-en="Website:" data-fr="Site web :">Website:</span> <a href="https://www.ionos.fr" target="_blank" rel="noopener">www.ionos.fr</a></li>
+                <li><span data-en="Company name:" data-fr="Raison sociale :">Company name:</span> GitHub, Inc.</li>
+                <li><span data-en="Address:" data-fr="Adresse :">Address:</span> 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, United States</li>
+                <li><span data-en="Phone:" data-fr="Téléphone :">Phone:</span> +1 (415) 935-3370</li>
+                <li><span data-en="Website:" data-fr="Site web :">Website:</span> <a href="https://github.com" target="_blank" rel="noopener">github.com</a></li>
+                <li><span data-en="Service:" data-fr="Service :">Service:</span> GitHub Pages — <a href="https://pages.github.com" target="_blank" rel="noopener">pages.github.com</a></li>
             </ul>
 
             <h3 data-en="3. Intellectual Property" data-fr="3. Propriété intellectuelle">3. Intellectual Property</h3>
@@ -3107,7 +3205,8 @@ Any lesson not attended will be lost.</div>
         const IMAGES = {
             logo: 'images/logo.png',
             heroCollage: 'images/hero-collage.jpg',
-            karinaPortrait: 'images/karina-portrait.jpg'
+            karinaPortrait: 'images/karina-portrait.jpg',
+            panneau2: 'images/panneau2.jpg'
         };
 
         document.querySelectorAll('[data-src-key]').forEach(img => {
@@ -3198,17 +3297,18 @@ Any lesson not attended will be lost.</div>
                 btn.classList.toggle('active', btn.dataset.lang === lang);
             });
 
-            // Update all translatable elements
+            // Update all translatable elements.
+            // Non-form elements use innerHTML so embedded <strong>/<em>/<br>
+            // in the data attribute renders as formatting.
             document.querySelectorAll('[data-en]').forEach(el => {
                 const text = el.getAttribute(`data-${lang}`);
-                if (text) {
-                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-                        el.placeholder = text;
-                    } else if (el.tagName === 'OPTION') {
-                        el.textContent = text;
-                    } else {
-                        el.textContent = text;
-                    }
+                if (text == null) return;
+                if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                    el.placeholder = text;
+                } else if (el.tagName === 'OPTION') {
+                    el.textContent = text;
+                } else {
+                    el.innerHTML = text;
                 }
             });
         }
