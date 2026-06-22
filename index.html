@@ -1585,6 +1585,25 @@
             text-underline-offset: 3px;
         }
 
+        .footer-credit-sep {
+            display: inline-block;
+            margin: 0 0.4rem;
+            opacity: 0.5;
+        }
+
+        a.footer-credit {
+            color: var(--violet);
+            text-decoration: none;
+            font-weight: 700;
+            transition: var(--transition);
+        }
+
+        a.footer-credit:hover {
+            color: var(--violet-dark);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
         .footer-copy {
             font-size: 0.8rem;
             width: 100%;
@@ -3227,6 +3246,9 @@
             </div>
             <div class="footer-copy">
                 © 2026 Frenchly Speaking. <span data-en="All rights reserved." data-fr="Tous droits réservés.">All rights reserved.</span>
+                <span class="footer-credit-sep">·</span>
+                <span data-en="Website by" data-fr="Site réalisé par">Website by</span>
+                <a class="footer-credit" href="https://bluedotmedia.net/" target="_blank" rel="noopener">Blue Dot Media</a>
             </div>
         </div>
     </footer>
