@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frenchly Speaking — Karina Vitiello, native French teacher</title>
-    <meta name="description" content="Learn French with a passionate native teacher. Private lessons, group classes, and conversation practice. Teaching French since 2002.">
+    <meta name="description" content="Learn French with a passionate native teacher from the South of France. Private lessons, group classes, and conversation practice — online, worldwide.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
@@ -59,7 +59,7 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 215px;
+            scroll-padding-top: 80px;
         }
 
         body {
@@ -141,7 +141,7 @@
         .navbar-inner {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0.3rem 2rem;
+            padding: 0.4rem 2rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -172,7 +172,7 @@
 
 
         .logo-img {
-            height: 200px;
+            height: 60px;
             width: auto;
             display: block;
             transition: var(--transition);
@@ -180,7 +180,7 @@
 
         @media (max-width: 768px) {
             .logo-img {
-                height: 164px;
+                height: 50px;
             }
         }
 
@@ -360,7 +360,7 @@
         .hero-inner {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 14rem 2rem 4rem;
+            padding: 6rem 2rem 4rem;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 3.5rem;
@@ -788,12 +788,25 @@
         .service-card {
             background: var(--white);
             border-radius: var(--radius-lg);
-            padding: 2rem 1.5rem;
+            padding: 2.5rem 1.5rem 1.2rem;
             box-shadow: var(--shadow-soft);
             transition: var(--transition);
             position: relative;
             overflow: hidden;
             border: 1px solid rgba(30, 58, 95, 0.04);
+            /* Grid layout with explicit row tracks. The parent .services-grid
+               stretches cards to equal height; the 1fr row (description)
+               absorbs extra space inside each card. Every other row sits at
+               the same Y across all four cards, so divider lines + prices
+               line up perfectly regardless of description length. */
+            display: grid;
+            grid-template-rows:
+                auto    /* icon */
+                auto    /* h3 title (min-height enforces consistency) */
+                1fr     /* description: absorbs variable space */
+                auto    /* price line */
+                auto    /* duration line */
+                auto    /* currency conversion line */;
         }
 
         .service-card::before {
@@ -843,7 +856,6 @@
             color: var(--warm-gray);
             margin-bottom: 1.5rem;
             line-height: 1.7;
-            flex: 1;
         }
 
         .service-price {
@@ -1586,15 +1598,11 @@
 
         /* ===================== RESPONSIVE ===================== */
         @media (max-width: 968px) {
-            .hero {
-                align-items: flex-start;
-            }
-
             .hero-inner {
                 grid-template-columns: 1fr;
                 text-align: center;
                 gap: 2.5rem;
-                padding: 12rem 2rem 3rem;
+                padding: 5rem 2rem 3rem;
             }
 
             .hero-image {
@@ -2133,6 +2141,12 @@
             font-style: italic;
             color: var(--warm-gray-light);
         }
+        /* === ABOUT image RIGHT, LESSONS image LEFT (19 juin 26) === */
+        .about-content { order: 1; }
+        .about-image-wrapper { order: 2; }
+        .lessons-image { order: 1; }
+        .lessons-text { order: 2; }
+
     </style>
 </head>
 <body>
@@ -2230,7 +2244,7 @@
         <div class="hero-decor hero-decor-3"></div>
         <div class="hero-inner">
             <div class="hero-image animate-on-scroll">
-                <img class="hero-image-collage" data-src-key="heroCollage" alt="A collage celebrating French culture: a Paris Métro sign, a baguette on a wooden board, an anthology of French poetry, a coffee cup with a notebook, a laptop workspace, and Louvre street signs.">
+                <img class="hero-image-collage" data-src-key="panneau2" alt="A collage of French country life: a French flag flying over fields, a rapeseed field, wine glasses at a long outdoor dinner, a rainbow over the countryside, regional cheeses at a market, a lavender field in Provence, and a tree-lined country road.">
             </div>
             <div class="hero-content">
 <h1>
@@ -2317,7 +2331,7 @@
                     </p>
                 </div>
                 <div class="lessons-image animate-on-scroll">
-                    <img class="lessons-collage" data-src-key="panneau2" alt="A collage of French country life: a French flag flying over fields, a rapeseed field, wine glasses at a long outdoor dinner, a rainbow over the countryside, regional cheeses at a market, a lavender field in Provence, and a tree-lined country road.">
+                    <img class="lessons-collage" data-src-key="panneau1" alt="A collage celebrating French culture: a Paris Métro sign, a baguette on a wooden board, an anthology of French poetry, a coffee cup with a notebook, a laptop workspace, and Louvre street signs.">
                 </div>
             </div>
 
@@ -3197,7 +3211,7 @@
     <footer class="footer">
         <div class="footer-inner">
             <div class="footer-brand">
-                <img data-src-key="logo" alt="Frenchly Speaking" class="footer-logo-img">
+                <img data-src-key="logoText" alt="Frenchly Speaking — Teaching French since 2002" class="footer-logo-img">
             </div>
             <div class="footer-links">
                 <a href="#about" data-en="About Me" data-fr="À propos">About Me</a>
@@ -3230,9 +3244,10 @@
         // and every <img data-src-key="..."> in the markup picks it up.
         const IMAGES = {
             logo: 'images/logo.png',
-            heroCollage: 'images/hero-collage.jpg',
-            karinaPortrait: 'images/karina-portrait.jpg',
-            panneau2: 'images/panneau2.jpg'
+            logoText: 'images/logo-text.png',
+            panneau1: 'images/panneau1.jpg',
+            panneau2: 'images/panneau2.jpg',
+            karinaPortrait: 'images/karina-portrait.jpg'
         };
 
         document.querySelectorAll('[data-src-key]').forEach(img => {
